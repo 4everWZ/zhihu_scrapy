@@ -35,32 +35,31 @@
 ### 项目结构
 
 ```text
-├── DataAnalysis
-│   ├── __init__.py
-│   ├── genWordCloud_PersonalInfo.py
-│   ├── genWordCloud_Content.py
-│   ├── plot.py
-│   ├── baidu_stopwords.txt
-│   ├── pie.png
-│   ├── wordcloud_Content.png
-│   ├── wordcloud_PersonalInfo.png
-├── sql
-│   ├── MySql.sql
-├── zhihu
-├── spiders
-    │   ├── __init__.py
-    │   └── zhihuSpider.py
-    ├── __init__.py
-    ├── dbtools.py
-    ├── items.py
-    ├── middlewares.py
-    ├── pipelines.py
-    ├── pipelines2mysql.py
-    ├── settings.py
-    ├── user-agent.py
-├── scrapy.cfg
-├── chromedriver.exe
-├── requirements.txt
-├── readme.md
-├── main.py
+├── DataAnalysis                  # 数据分析模块
+│   ├── __init__.py               # 使 DataAnalysis 成为一个包
+│   ├── baidu_stopwords.txt       # 停用词文件
+│   ├── gen_wordcloud_content.py  # 生成内容词云 (修正了文件名)
+│   ├── gen_wordcloud_personalinfo.py # 生成个人信息词云 (修正了文件名)
+│   ├── plot.py                   # 绘图脚本
+│   ├── pie.png                   # 饼图输出
+│   ├── wordcloud_Content.png     # 内容词云图
+│   └── wordcloud_PersonalInfo.png # 个人信息词云图
+├── sql                           # SQL 脚本存放目录
+│   └── MySQL.sql                 # 数据库建表语句
+├── zhihu                         # Scrapy 项目主包 (核心)
+│   ├── __init__.py               # 使 zhihu 成为一个包
+│   ├── items.py                  # 定义数据项
+│   ├── middlewares.py            # 中间件
+│   ├── pipelines.py              # 数据管道
+│   ├── pipelines2mysql.py        # 专门用于存入MySQL的管道
+│   ├── settings.py               # Scrapy 设置
+│   ├── user-agent.py             # User-Agent 工具
+│   └── spiders                   # 爬虫文件夹
+│       ├── __init__.py           # 使 spiders 成为一个包
+│       └── zhihuspider.py        # 知乎爬虫 (修正了文件名)
+├── chromedriver.exe              # ChromeDriver 可执行文件
+├── main.py                       # 项目启动入口文件
+├── requirements.txt              # 依赖包列表
+├── readme.md                     # 项目说明文档
+└── scrapy.cfg                    # Scrapy 配置文件 (必须在项目根目录)
 ```
